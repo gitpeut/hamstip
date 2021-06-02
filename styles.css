@@ -1,10 +1,45 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-style: normal;
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+.flextitle{
+    display: grid;
+    grid-template-columns: 1fr 3fr ;
+    justify-self: center;
+
+
+}
+
+.titletxt {
+    display: inline;
+    text-align: center;
+    font-size: xx-large;
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+img{
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    /*grid-column-start: 1;*/
+
+}
 
 #menu, #menu::after {
     position: relative;
+    grid-column-start: 1;
+    justify-self: left;
     margin: 10px;
     height: 0;
     width: 50px;
-
     border: none;
     padding: 0;
 
@@ -19,36 +54,26 @@
     border-bottom-style: solid;
     padding-bottom: 5px;
 
+    transition: height .5s, width .5s, font-size .5s;
+
 }
 
-#menu::after {
-
-    /*transition: width 2s ease-in-out;*/
-    /*transition: border-radius 2s ease-in-out;*/
-}
-
-/*
-#menu::after{
-    position: absolute;
-    display: block;
-    content: "";
-    top: -22px;
-    width: 0px;
-    font-size: xx-large;
-    color: lightyellow;
-    height: 36px;
-    background-color: #D84282;
-    border-radius: 0px;
-    transition: height .4s ease-in-out;
-    transition: border-radius 2s ease-in-out;
-}
-*/
 #menu:hover {
-    height: 36px;
+    height: 72pt;
+    width: 100px;
     border-radius: 50px;
+    border-top-style: solid;
+    border-top-width: 7px;
     padding-top: 5px;
-    content: "A"
+    font-size: 48pt;
     color: black;
+
+}
+
+#menu:hover::after{
+    text-align: justify;
+    content: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+    border: 0 none;
 }
 
 
