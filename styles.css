@@ -9,41 +9,65 @@ body{
     font-family: Arial,Helvetica,sans-serif;
 }
 
-.flextitle{
+#grid-container{
     display: grid;
-    grid-template-columns: 1fr 3fr ;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 100px 100px 100px 100px;
+    grid-row-gap: 16px;
+    grid-template-areas:
+            "menu titletxt titletxt titletxt"
+            "plaatje1 selling1 selling1 selling1"
+            "plaatje2 selling2 selling2 selling2"
+            "plaatje3 selling3 selling3 selling3";
+
 }
 
-.titletxt {
-    display: inline;
-    text-align: center;
+#titletxt {
+    display: flex;
     font-size: xx-large;
-    grid-column-start: 2;
-    grid-row-start: 1;
+    grid-area: titletxt;
 
 }
 
-.selling{
-    display: inline;
-    text-align: left;
-    font-size: normal;
-    grid-column-start: 2;
-    align-self: center;
+#selling1, #selling2, #selling3{
+    display: flex;
     justify-self: left;
+    align-self: center;
 }
 
-img{
+#selling1{
+    grid-area: selling1;
+}
+#selling2{
+    grid-area: selling2;
+}
+#selling3{
+    grid-area: selling3;
+}
 
-    height: 100px;
+
+
+#plaatje1, #plaatje2, #plaatje3 {
+
+    height: 90px;
+    width: 100px;
     margin-left: auto;
     margin-right: auto;
-    grid-column-start: 1;
 
+}
+
+#plaatje1{
+    grid-area: plaatje1;
+}
+#plaatje2{
+    grid-area: plaatje2;
+}
+#plaatje3{
+    grid-area: plaatje3;
 }
 
 #menu, #menu::after {
     position: relative;
-    grid-column-start: 1;
     justify-self: left;
     margin: 10px;
     height: 0;
@@ -62,6 +86,7 @@ img{
     border-bottom-style: solid;
     padding-bottom: 5px;
 
+    grid-area: menu;
 
     transition: height .5s, width .5s, font-size .5s;
 
